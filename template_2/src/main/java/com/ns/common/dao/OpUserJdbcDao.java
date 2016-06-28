@@ -1,7 +1,7 @@
 package com.ns.common.dao;
 
 import com.ns.common.bean.OpUser;
-import com.ns.common.dao.spi.AbsNSJdbcDao;
+import com.ns.common.dao.spi.db.AbsNSJdbcDao;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 

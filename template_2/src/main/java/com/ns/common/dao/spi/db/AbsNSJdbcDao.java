@@ -1,4 +1,4 @@
-package com.ns.common.dao.spi;
+package com.ns.common.dao.spi.db;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
