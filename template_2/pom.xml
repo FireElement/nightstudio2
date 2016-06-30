@@ -91,6 +91,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
+                    <mainClass>com.ns.common.Application</mainClass>
                 </configuration>
             </plugin>
 
