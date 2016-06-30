@@ -13,7 +13,6 @@ public class StringUtil {
 		if (str == null) {
 			return null;
 		}
-		// comment
 		if (str.length() == 0) {
 			return str;
 		}
