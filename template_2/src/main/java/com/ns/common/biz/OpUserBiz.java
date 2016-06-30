@@ -7,6 +7,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -32,6 +33,10 @@ public class OpUserBiz {
 
     public OpUser getByName1(String name) {
         return jdbcDao.getByName(name);
+    }
+
+    public List<OpUser> getAll1() {
+        return jdbcDao.getAll();
     }
 
     public int modifyPasswd(String name, String passwd) {

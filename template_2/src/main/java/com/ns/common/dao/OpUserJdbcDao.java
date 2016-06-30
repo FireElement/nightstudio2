@@ -5,6 +5,8 @@ import com.ns.common.dao.spi.db.AbsNSJdbcDao;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by xuezhucao on 16/6/14.
  */
@@ -41,6 +43,10 @@ public class OpUserJdbcDao extends AbsNSJdbcDao<OpUser> {
     }
 
     public OpUser getByName(String name) {
-        return queryObject(new String[] {"name = ?"}, name);
+        return queryObj(new String[] {"name = ?"}, name);
+    }
+
+    public List<OpUser> getAll() {
+        return queryList();
     }
 }
