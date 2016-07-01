@@ -2,6 +2,7 @@ package com.ns.common.dao;
 
 import com.ns.common.bean.OpUser;
 import com.ns.common.dao.spi.db.AbsNSJdbcDao;
+import com.ns.common.util.array.ArrayUtil;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
@@ -21,25 +22,41 @@ public class OpUserJdbcDao extends AbsNSJdbcDao<OpUser> {
             rs.getTimestamp("update_time"));
 
     @Override
+    public RowMapper<OpUser> getRowMapper() {
+        return mapper;
+    }
+
+    @Override
     public String getTableName() {
         return "op_user";
     }
 
     @Override
     public String[] getReadFields() {
-        return new String[] {
-            "id", "name", "passwd", "create_time", "update_time"
-        };
+        return ArrayUtil.addAll(getWriteFields(), new String[] {
+                "id", "update_time"
+        });
     }
 
     @Override
     public String[] getWriteFields() {
-        return new String[0];
+        return new String[] {
+                "name", "passwd", "create_time"
+        };
     }
 
     @Override
-    public RowMapper<OpUser> getRowMapper() {
-        return mapper;
+    public Object[] getInsertParams(OpUser opUser) {
+        return new Object[] {
+                opUser.getName(),
+                opUser.getPasswd(),
+                opUser.getCreateTime(),
+        };
+    }
+
+    @Override
+    public void setId(OpUser opUser, Number id) {
+        opUser.setId(id.longValue());
     }
 
     public OpUser getByName(String name) {
@@ -48,5 +65,16 @@ public class OpUserJdbcDao extends AbsNSJdbcDao<OpUser> {
 
     public List<OpUser> getAll() {
         return queryList();
+    }
+
+    public OpUser update(OpUser opUser) throws Throwable {
+        super.update(new String[] {
+                "name", "passwd"
+        },
+        new String[]{
+                "id = ?"
+        },
+        opUser.getName(), opUser.getPasswd(), opUser.getId());
+        return opUser;
     }
 }

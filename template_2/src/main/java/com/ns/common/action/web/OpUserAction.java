@@ -1,7 +1,9 @@
 package com.ns.common.action.web;
 
 
+import com.ns.common.bean.OpUser;
 import com.ns.common.biz.OpUserBiz;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,9 +26,19 @@ public class OpUserAction {
         return biz.getByName1(name);
     }
 
-    @RequestMapping("/getAll1")
-    public Object getAll1() {
-        return biz.getAll1();
+    @RequestMapping("/getAll")
+    public Object getAll() {
+        return biz.getAll();
+    }
+
+    @RequestMapping("/insert")
+    public Object insert(@ModelAttribute OpUser opUser) throws Throwable {
+        return biz.insert(opUser);
+    }
+
+    @RequestMapping("/modify")
+    public Object modify(@ModelAttribute OpUser opUser) throws Throwable {
+        return biz.modify(opUser);
     }
 
     @RequestMapping("/modifyPasswd")

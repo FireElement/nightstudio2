@@ -3,6 +3,7 @@ package com.ns.common.biz;
 import com.ns.common.bean.OpUser;
 import com.ns.common.dao.OpUserDao;
 import com.ns.common.dao.OpUserJdbcDao;
+import com.ns.common.util.datetime.DateTimeUtil;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -35,8 +36,18 @@ public class OpUserBiz {
         return jdbcDao.getByName(name);
     }
 
-    public List<OpUser> getAll1() {
+    public List<OpUser> getAll() {
         return jdbcDao.getAll();
+    }
+
+    public OpUser insert(OpUser opUser) throws Throwable {
+        opUser.setCreateTime(DateTimeUtil.getNowDate());
+        jdbcDao.insert(opUser);
+        return opUser;
+    }
+
+    public OpUser modify(OpUser opUser) throws Throwable {
+        return jdbcDao.update(opUser);
     }
 
     public int modifyPasswd(String name, String passwd) {
