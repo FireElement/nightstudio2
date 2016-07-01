@@ -17,7 +17,7 @@ public class OpUserAction {
     private OpUserBiz biz;
 
     @RequestMapping("/getByName")
-    public Object getByName(@RequestParam String name) {
+    public Object getByName(@RequestParam String name) throws Throwable {
         return biz.getByName(name);
     }
 

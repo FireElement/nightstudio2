@@ -9,4 +9,8 @@ public class RedisUtil {
     public static String getTokenKey(String token) {
         return String.format(RedisConstant.Key.TOKEN, token);
     }
+
+    public static String getOpUserKey(String name) {
+        return String.format(RedisConstant.Key.OP_USER, name);
+    }
 }

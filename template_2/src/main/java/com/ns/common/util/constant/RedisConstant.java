@@ -7,5 +7,6 @@ public interface RedisConstant {
     interface Key {
         String SPACE = "_";
         String TOKEN = "token_%s";
+        String OP_USER = "op_user_%s";
     }
 }
