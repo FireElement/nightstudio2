@@ -3,6 +3,7 @@ package com.ns.common.action.web;
 
 import com.ns.common.bean.OpUser;
 import com.ns.common.biz.OpUserBiz;
+import com.ns.common.util.constant.PathConstant;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/opUser")
+@RequestMapping(PathConstant.WEB_PREFIX + "/opUser")
 public class OpUserAction {
     @Resource
     private OpUserBiz biz;

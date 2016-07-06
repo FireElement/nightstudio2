@@ -1,5 +1,6 @@
 package com.ns.common.util.filter;
 
+import com.ns.common.util.filter.token.TokenFilter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -8,14 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * Created by xuezhucao on 16/6/20.
  */
 @Configuration
-public class WebAppConfig extends WebMvcConfigurerAdapter {
+public class FilterConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // 多个拦截器组成一个拦截器链
-        // addPathPatterns 用于添加拦截规则
-        // excludePathPatterns 用户排除拦截
-        registry.addInterceptor(new Interceptor1()).addPathPatterns("/**");
+        registry.addInterceptor(new TokenFilter()).addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 }
