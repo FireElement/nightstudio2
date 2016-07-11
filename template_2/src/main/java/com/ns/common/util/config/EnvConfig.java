@@ -1,7 +1,6 @@
-package com.ns.common.util.env;
+package com.ns.common.util.config;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -10,7 +9,7 @@ import org.springframework.core.env.Environment;
  * Created by xuezhucao on 16/6/20.
  */
 @Configuration
-public class EnvUtil implements EnvironmentAware {
+public class EnvConfig implements EnvironmentAware {
 
     //注入application.properties的属性到指定变量中.
     @Value("${spring.datasource.url}")
@@ -23,17 +22,17 @@ public class EnvUtil implements EnvironmentAware {
     public void setEnvironment(Environment environment) {
 
         //打印注入的属性信息.
-        System.out.println("db url="+dbUrl);
+        //System.out.println("db url="+dbUrl);
 
         //通过 environment 获取到系统属性.
-        System.out.println(environment.getProperty("JAVA_HOME"));
+        //System.out.println(environment.getProperty("JAVA_HOME"));
 
         //通过 environment 同样能获取到application.properties配置的属性.
-        System.out.println(environment.getProperty("spring.datasource.url"));
+        //System.out.println(environment.getProperty("spring.datasource.url"));
 
         //获取到前缀是"spring.datasource." 的属性列表值.
-        RelaxedPropertyResolver relaxedPropertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
-        System.out.println("spring.datasource.url="+relaxedPropertyResolver.getProperty("url"));
-        System.out.println("spring.datasource.driverClassName="+relaxedPropertyResolver.getProperty("driverClassName"));
+        //RelaxedPropertyResolver relaxedPropertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
+        //System.out.println("spring.datasource.url="+relaxedPropertyResolver.getProperty("url"));
+        //System.out.println("spring.datasource.driverClassName="+relaxedPropertyResolver.getProperty("driverClassName"));
     }
 }

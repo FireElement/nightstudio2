@@ -1,4 +1,4 @@
-package com.ns.common.util.filter;
+package com.ns.common.util.config;
 
 import com.ns.common.util.filter.token.TokenFilter;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.ns.common.dao.spi.redis;
+package com.ns.common.util.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

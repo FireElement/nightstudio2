@@ -1,4 +1,4 @@
-package com.ns.common.util.schedule;
+package com.ns.common.util.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;

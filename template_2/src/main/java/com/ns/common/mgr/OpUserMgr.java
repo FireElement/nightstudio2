@@ -2,7 +2,6 @@ package com.ns.common.mgr;
 
 import com.ns.common.bean.OpUser;
 import com.ns.common.dao.OpUserDao;
-import com.ns.common.dao.OpUserJdbcDao;
 import com.ns.common.dao.OpUserRedisDao;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +14,6 @@ import javax.annotation.Resource;
 public class OpUserMgr {
     @Resource
     private OpUserDao dao;
-    @Resource
-    private OpUserJdbcDao jdbcDao;
     @Resource
     private OpUserRedisDao redisDao;
 
