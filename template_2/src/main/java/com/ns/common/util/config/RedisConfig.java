@@ -1,5 +1,7 @@
 package com.ns.common.util.config;
 
+import com.ns.common.biz.ParamBiz;
+import com.ns.common.util.constant.ParamConstant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -12,10 +14,11 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 @Configuration
 public class RedisConfig {
+
     @Bean
-    public JedisConnectionFactory redisConnectionFactory() {
+    public JedisConnectionFactory redisConnectionFactory(ParamBiz paramBiz) throws Throwable {
         JedisConnectionFactory factory = new JedisConnectionFactory();
-        factory.setHostName("127.0.0.1");
+        factory.setHostName(paramBiz.getStringByName(ParamConstant.Key.REDIS_SERVER_1_IP));
         factory.setPort(6379);
         factory.setPassword("");
         return factory;

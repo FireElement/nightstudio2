@@ -7,17 +7,16 @@ import com.ns.common.util.exception.errorcode.ErrorCode;
 import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * Created by xuezhucao on 15/8/19.
  */
-@Service
 public class ParamBiz {
-    @Resource
     private ParamMgr mgr;
+
+    public ParamBiz(ParamMgr mgr) {
+        this.mgr = mgr;
+    }
 
     public Param getByName(String name) throws Throwable {
         if (StringUtils.isEmpty(name)) {

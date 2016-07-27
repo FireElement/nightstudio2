@@ -10,6 +10,10 @@ public class RedisUtil {
         return String.format(RedisConstant.Key.TOKEN, token);
     }
 
+    public static String getWebTokenKey(String token) {
+        return String.format(RedisConstant.Key.WEB_TOKEN, token);
+    }
+
     public static String getOpUserKey(String name) {
         return String.format(RedisConstant.Key.OP_USER, name);
     }
