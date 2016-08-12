@@ -5,23 +5,13 @@ package com.ns.common.util.constant;
  */
 public interface FilterConstant {
     String[] TOKEN_FILTER_IGNORE_PATHS = {
-            "regist.do",
-            "login.do",
-            "logout.do",
-            "checkToken.do",
-            "invalidToken.do"
+            "app/app/getLastVersionAndDownloadUrl",
+            "app/token/checkToken",
+            "app/token/invalidToken"
     };
     String[] TOKEN_FILTER_PATHS = {
             PathConstant.APP_PREFIX
     };
-    String[] SESSION_FILTER_IGNORE_PATHS = {
-            "login.do",
-            "sessionError.do"
-    };
-    String[] SESSION_FILTER_PATHS = {
-            PathConstant.WEB_PREFIX
-    };
-
     String[] SIG_FILTER_IGNORE_PATHS = {
     };
 

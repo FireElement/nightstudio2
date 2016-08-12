@@ -7,5 +7,5 @@ public interface PathConstant {
     String APP_PREFIX = "/app";
     String WEB_PREFIX = "/web";
 
-    String INVALID_TOKEN = APP_PREFIX + "/token/invalidToken.do";
+    String INVALID_TOKEN = APP_PREFIX + "/token/invalidToken";
 }

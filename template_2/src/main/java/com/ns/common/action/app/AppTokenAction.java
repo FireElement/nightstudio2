@@ -19,12 +19,12 @@ public class AppTokenAction {
     @Resource
     protected TokenBiz biz;
 
-    @RequestMapping("/invalidToken.do")
+    @RequestMapping("/invalidToken")
     public Object invalidToken() throws Throwable {
         throw new NSException(ErrorCode.INVALID_TOKEN);
     }
 
-    @RequestMapping("/checkToken.do")
+    @RequestMapping("/checkToken")
     public Object check(@RequestParam String token) throws Throwable {
         return biz.check(token);
     }

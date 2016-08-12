@@ -19,7 +19,7 @@ public class AppAppAction {
     @Resource
     private AppBiz appBiz;
 
-    @RequestMapping("/getLastVersionAndDownloadUrl.do")
+    @RequestMapping("/getLastVersionAndDownloadUrl")
     @ResponseBody
     public Object getLastVersionAndDownloadUrl(@ModelAttribute App app) throws Throwable {
         return appBiz.getLastVersionAndDownloadUrl(app);
