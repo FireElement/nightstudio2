@@ -14,6 +14,7 @@ public class FilterConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TokenFilter()).addPathPatterns("/**");
+//        registry.addInterceptor(new SigFilter()).addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 }
