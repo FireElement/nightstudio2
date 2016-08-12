@@ -11,7 +11,8 @@ public enum ErrorCode {
 	CREATE_TOKEN_FAIL("8:创建token失败"),
 	GET_PARAM_FAIL("9:获取参数失败"),
 	GET_LAST_APP_VERSION_FAIL("10:获取最新的app版本失败"),
-	GET_LAST_APP_DOWNLOAD_URL_FAIL("11:获取最新的app下载地址失败");
+	GET_LAST_APP_DOWNLOAD_URL_FAIL("11:获取最新的app下载地址失败"),
+	WRONG_PASSWD("11:密码错误");
 
 	
 	private String value;

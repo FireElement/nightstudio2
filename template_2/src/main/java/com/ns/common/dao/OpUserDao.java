@@ -14,6 +14,9 @@ public interface OpUserDao extends CrudRepository<OpUser, Long> {
     OpUser getById(long id);
     OpUser getByName(String name);
 
+    @Query("select passwd from OpUser where name = :name")
+    String getPasswdByName(@Param("name") String name);
+
     @Transactional
     @Modifying
     @Query("update OpUser set passwd = :passwd where name = :name")

@@ -20,8 +20,8 @@ import java.util.Map;
 public class AopNSJsonAction {
     private static Log logger = LogFactory.getLog(AopNSJsonAction.class);
 
-    private final static String el = "execution(* com.ns.template.action.app..*(..))";
-    private final static String el1 = "execution(* com.ns.common.action.app..*(..))";
+    private final static String el = "execution(* com.ns.template.action..*(..))";
+    private final static String el1 = "execution(* com.ns.common.action..*(..))";
 
     @Around(el)
     public Object around(ProceedingJoinPoint joinPoint) {

@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping(PathConstant.APP_PREFIX + "/token")
-public class TokenAction {
+public class AppTokenAction {
     @Resource
     protected TokenBiz biz;
 

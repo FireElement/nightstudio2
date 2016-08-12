@@ -1,10 +1,16 @@
 package com.ns.common.biz;
 
 import com.ns.common.bean.OpUser;
+import com.ns.common.bean.Token;
 import com.ns.common.dao.OpUserDao;
 import com.ns.common.dao.OpUserJdbcDao;
 import com.ns.common.mgr.OpUserMgr;
 import com.ns.common.util.datetime.DateTimeUtil;
+import com.ns.common.util.exception.errorcode.ErrorCode;
+import com.ns.common.util.exception.sys.NSException;
+import com.ns.common.util.exception.sys.ParameterException;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,6 +27,8 @@ public class OpUserBiz {
     private OpUserDao dao;
     @Resource
     private OpUserJdbcDao jdbcDao;
+    @Autowired
+    private WebTokenBiz webTokenBiz;
 
     public OpUser getById(long id) throws Throwable {
         return mgr.getById(id);
@@ -34,8 +42,37 @@ public class OpUserBiz {
         return jdbcDao.getByName(name);
     }
 
+    public String getPasswdByName(String name) throws Throwable {
+        if (StringUtils.isEmpty(name)) {
+            throw new ParameterException("用户名为空");
+        }
+        return dao.getPasswdByName(name);
+    }
+
     public List<OpUser> getAll() {
         return jdbcDao.getAll();
+    }
+
+    public Token login(String name, String passwd) throws Throwable {
+        if (StringUtils.isEmpty(name)) {
+            throw new ParameterException("用户名为空");
+        }
+        if (StringUtils.isEmpty(passwd)) {
+            throw new ParameterException("密码为空");
+        }
+        OpUser opUser = getByName(name);
+        String p = getPasswdByName(name);
+        if (!passwd.equals(p)) {
+            throw new NSException(ErrorCode.WRONG_PASSWD);
+        }
+
+        Token result = new Token();
+        result.setUserId(opUser.getId());
+        return webTokenBiz.create(result);
+    }
+
+    public void logout(Token token) throws Throwable {
+        webTokenBiz.delete(token);
     }
 
     public OpUser insert(OpUser opUser) throws Throwable {
