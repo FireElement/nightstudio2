@@ -22,8 +22,12 @@ public class OpUserBiz {
     @Resource
     private OpUserJdbcDao jdbcDao;
 
+    public OpUser getById(long id) throws Throwable {
+        return mgr.getById(id);
+    }
+
     public OpUser getByName(String name) throws Throwable {
-        return mgr.getByName(name);
+        return dao.getByName(name);
     }
 
     public OpUser getByName1(String name) {

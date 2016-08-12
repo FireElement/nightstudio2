@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OpUserRedisDao extends AbsNSRedisDao {
-    public OpUser getOpUser(String name) throws Throwable {
-        return getObj(RedisUtil.getOpUserKey(name), OpUser.class);
+    public OpUser getOpUser(long id) throws Throwable {
+        return getObj(RedisUtil.getOpUserKey(id), OpUser.class);
     }
 
     public void setOpUser(OpUser opUser) throws Throwable {
-        setObj(RedisUtil.getOpUserKey(opUser.getName()), opUser);
+        setObj(RedisUtil.getOpUserKey(opUser.getId()), opUser);
     }
 }

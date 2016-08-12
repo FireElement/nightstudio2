@@ -17,6 +17,11 @@ public class OpUserAction {
     @Resource
     private OpUserBiz biz;
 
+    @RequestMapping("/getById")
+    public Object getById(@RequestParam long id) throws Throwable {
+        return biz.getById(id);
+    }
+
     @RequestMapping("/getByName")
     public Object getByName(@RequestParam String name) throws Throwable {
         return biz.getByName(name);

@@ -17,10 +17,10 @@ public class OpUserMgr {
     @Resource
     private OpUserRedisDao redisDao;
 
-    public OpUser getByName(String name) throws Throwable {
-        OpUser result = redisDao.getOpUser(name);
+    public OpUser getById(long id) throws Throwable {
+        OpUser result = redisDao.getOpUser(id);
         if (result == null) {
-            result = dao.getByName(name);
+            result = dao.getById(id);
             redisDao.setOpUser(result);
         }
         return result;

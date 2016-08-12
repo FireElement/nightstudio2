@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by xuezhucao on 16/6/12.
  */
 public interface OpUserDao extends CrudRepository<OpUser, Long> {
+    OpUser getById(long id);
     OpUser getByName(String name);
 
     @Transactional
