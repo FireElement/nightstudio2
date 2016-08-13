@@ -1,6 +1,6 @@
 package com.ns.common.dao;
 
-import com.ns.common.bean.MongoTest;
+import com.ns.common.bean.mongo.MongoTest;
 import com.ns.common.dao.spi.mongodb.AbsNsMongoDao;
 import org.springframework.stereotype.Service;
 

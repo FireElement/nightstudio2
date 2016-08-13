@@ -1,7 +1,7 @@
 package com.ns.common.util.config;
 
-import com.ns.common.biz.MqBiz;
 import com.ns.common.biz.ParamBiz;
+import com.ns.common.biz.SmsBiz;
 import com.ns.common.util.constant.MqConstant;
 import com.ns.common.util.constant.ParamConstant;
 import com.ns.common.util.mq.MqReceiverContainer;
@@ -34,9 +34,9 @@ public class RabbitmqConfig {
     }
 
     @Bean
-    MqReceiverContainer mqReceiverContainer(MqBiz mqBiz) {
+    MqReceiverContainer mqReceiverContainer(SmsBiz smsBiz) {
         MqReceiverContainer result = new MqReceiverContainer();
-        result.addReceiver(mqBiz);
+        result.addReceiver(smsBiz);
         return result;
     }
 

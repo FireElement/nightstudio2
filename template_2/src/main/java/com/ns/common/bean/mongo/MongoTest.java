@@ -1,4 +1,4 @@
-package com.ns.common.bean;
+package com.ns.common.bean.mongo;
 
 import org.mongodb.morphia.annotations.Entity;
 import org.springframework.data.annotation.Id;

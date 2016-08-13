@@ -1,6 +1,6 @@
 package com.ns.common.dao;
 
-import com.ns.common.bean.MongoTest;
+import com.ns.common.bean.mongo.MongoTest;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

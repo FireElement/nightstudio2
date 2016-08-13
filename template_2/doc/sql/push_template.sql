@@ -1,0 +1,1 @@
+INSERT INTO template.push_template (id, template_id, content, create_time, update_time) VALUES (1, 1, 'push template 1', '2016-04-21 11:16:56', '2016-04-21 11:20:55');

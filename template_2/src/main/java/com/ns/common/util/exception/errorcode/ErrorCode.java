@@ -14,7 +14,9 @@ public enum ErrorCode {
 	GET_LAST_APP_DOWNLOAD_URL_FAIL("11:获取最新的app下载地址失败"),
 	WRONG_PASSWD("11:密码错误"),
     INVALID_SIG("12:无效的sig"),
-    UPLOAD_IMG_FAIL("13:上传图片失败");
+    UPLOAD_IMG_FAIL("13:上传图片失败"),
+    SEND_SMS_FAIL("14:发送短信失败"),
+    INVALID_MOBILE("15:无效的手机号");
 
 	private String value;
 	

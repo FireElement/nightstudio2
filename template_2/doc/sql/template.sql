@@ -44,6 +44,61 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COMMENT = '参数及常量表';
 
+-- -----------------------------------------------------
+-- Table `sms_template`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `sms_template` ;
+
+CREATE TABLE IF NOT EXISTS `sms_template` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '',
+  `template_id` BIGINT(20) NOT NULL COMMENT '模板id',
+  `content` VARCHAR(512) NOT NULL COMMENT '模板内容',
+  `create_time` DATETIME NOT NULL COMMENT '',
+  `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '')
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8
+  COMMENT = '短信模板表';
+
+CREATE UNIQUE INDEX `template_id_UNIQUE` ON `sms_template` (`template_id` ASC)  COMMENT '';
+
+-- -----------------------------------------------------
+-- Table `push_template`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `push_template` ;
+
+CREATE TABLE IF NOT EXISTS `push_template` (
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '',
+    `template_id` BIGINT(20) NOT NULL COMMENT '模板id',
+    `content` VARCHAR(512) NOT NULL COMMENT '模板内容',
+    `create_time` DATETIME NOT NULL COMMENT '',
+    `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
+    PRIMARY KEY (`id`)  COMMENT '')
+    ENGINE = InnoDB
+    DEFAULT CHARACTER SET = utf8
+    COMMENT = 'push模板表';
+
+CREATE UNIQUE INDEX `template_id_UNIQUE` ON `push_template` (`template_id` ASC)  COMMENT '';
+
+-- -----------------------------------------------------
+-- Table `email_template`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `email_template` ;
+
+CREATE TABLE IF NOT EXISTS `email_template` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '',
+  `template_id` BIGINT(20) NOT NULL COMMENT '模板id',
+  `subject` VARCHAR(256) NOT NULL COMMENT '',
+  `content` VARCHAR(2048) NOT NULL COMMENT '模板内容',
+  `receiver` VARCHAR(256) NULL COMMENT '',
+  `create_time` DATETIME NOT NULL COMMENT '',
+  `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '')
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8
+  COMMENT = '邮件模板表';
+
+CREATE UNIQUE INDEX `template_id_UNIQUE` ON `email_template` (`template_id` ASC)  COMMENT '';
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

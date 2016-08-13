@@ -1,6 +1,5 @@
 package com.ns.common.util.config;
 
-import com.ns.common.biz.MqBiz;
 import com.ns.common.dao.MongoTestDao;
 import com.ns.common.dao.MongoTestMongoDao;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +14,6 @@ import javax.annotation.Resource;
 @Configuration
 @EnableScheduling
 public class SchedulingConfig {
-    @Resource
-    private MqBiz mqBiz;
     @Resource
     private MongoTestDao mongoTestDao;
     @Resource
@@ -35,7 +32,6 @@ public class SchedulingConfig {
             System.out.println(mongoTest);
         }*/
 
-//        mqBiz.send();
 //        System.out.println(">>>>>>>>> SchedulingConfig.scheduler()");
     }
 }
