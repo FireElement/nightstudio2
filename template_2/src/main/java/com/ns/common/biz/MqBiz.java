@@ -12,6 +12,7 @@ import java.util.Map;
 /**
  * Created by xuezhucao on 16/8/13.
  */
+//TODO
 @Service
 public class MqBiz implements IMqReceiver {
     @Resource

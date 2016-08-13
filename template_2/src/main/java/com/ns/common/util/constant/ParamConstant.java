@@ -47,6 +47,10 @@ public interface ParamConstant {
         String RABBIT_USER_NAME = "RABBIT_USER_NAME";
         String RABBIT_PASSWORD = "RABBIT_PASSWORD";
 
+        String MONGO_SERVER_1_ADDRESS = "MONGO_SERVER_1_ADDRESS";
+        String MONGO_SERVER_1_PORT = "MONGO_SERVER_1_PORT";
+        String MONGO_DB_NAME = "MONGO_DB_NAME";
+
         String LAST_CONFIG_VERSION = "LAST_CONFIG_VERSION";
 
         String EMAIL_HOST_NAME = "EMAIL_HOST_NAME";

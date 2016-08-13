@@ -17,12 +17,15 @@ INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JPUS
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('LAST_APP_DOWNLOAD_URL_1_1', 'http://app.ka-tuan.com/KatuanDriver_1.0.0.apk', '2016-05-12 14:11:47', '2016-05-26 13:28:20');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('LAST_APP_VERSION_1_1', '1.0.0', '2016-04-26 14:14:25', '2016-04-26 14:14:31');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('LAST_CONFIG_VERSION', '1', '2016-04-25 14:22:56', '2016-04-25 14:23:03');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('MONGO_DB_NAME', 'template', '2016-08-13 15:42:10', '2016-08-13 15:42:30');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('MONGO_SERVER_1_ADDRESS', '127.0.0.1', '2016-08-13 15:42:59', '2016-08-13 15:43:03');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('MONGO_SERVER_1_PORT', '27017', '2016-08-13 15:43:23', '2016-08-13 15:43:26');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('OSS_BUCKET_IMG', 'ktimg', '2016-04-19 15:35:24', '2016-04-19 16:15:49');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('OSS_ENDPOINT', 'http://oss-cn-beijing.aliyuncs.com', '2016-04-19 15:28:29', '2016-04-19 16:15:53');
-INSERT INTO template.param (name, value, create_time, update_time) VALUES ('RABBIT_HOST', 'db.ka-tuan.com', '2016-04-21 16:35:30', '2016-05-24 18:14:44');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('RABBIT_HOST', '127.0.0.1', '2016-04-21 16:35:30', '2016-07-27 17:15:14');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('RABBIT_PASSWORD', 'katuan@1712', '2016-04-22 16:22:07', '2016-05-26 15:27:43');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('RABBIT_USER_NAME', 'admin', '2016-04-22 16:21:39', '2016-05-26 15:27:41');
-INSERT INTO template.param (name, value, create_time, update_time) VALUES ('REDIS_SERVER_1_IP', 'db.ka-tuan.com', '2016-04-19 15:25:49', '2016-05-24 18:14:48');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('REDIS_SERVER_1_IP', '127.0.0.1', '2016-04-19 15:25:49', '2016-07-27 18:23:43');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('REDIS_SERVER_1_PASSWD', '', '2016-04-19 15:26:31', '2016-04-19 16:16:09');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('REDIS_SERVER_1_PORT', '6379', '2016-04-19 15:26:13', '2016-04-19 16:16:15');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('SIG_IGNORE_SECRET', 'shichaoxuzitong#$201605051523', '2016-05-05 15:23:59', '2016-05-05 15:24:07');
