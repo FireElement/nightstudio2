@@ -1,4 +1,4 @@
-package com.ns.common.util.LngLat;
+package com.ns.common.util.Lnglat;
 
 
 import com.ns.common.util.exception.sys.ParameterException;

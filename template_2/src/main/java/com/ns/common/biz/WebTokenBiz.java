@@ -8,18 +8,18 @@ import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
 import com.ns.common.util.string.StringUtil;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Random;
 
 /**
  * Created by caoxuezhu01 on 14-9-14.
  */
-@Component
+@Service
 public class WebTokenBiz {
     Random random = new Random();
-    @Autowired
+    @Resource
     protected WebTokenDao dao;
 
     public Token get(String token) throws Throwable {

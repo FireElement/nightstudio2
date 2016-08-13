@@ -7,12 +7,12 @@ import com.ns.common.util.exception.sys.SystemInternalException;
 import com.ns.common.util.gson.GsonUtil;
 import com.ns.common.util.http.HttpUtil;
 import org.apache.commons.collections.CollectionUtils;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by xuezhucao on 16/7/6.
  */
-@Component
+@Service
 public class RouteUtil extends BaiduMapUtil {
     public RouteItem driving(long startLongitude, long startLatitude,
                              long targetLongitude, long targetLatitude) throws Throwable {

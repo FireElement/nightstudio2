@@ -10,7 +10,6 @@ import com.ns.common.util.exception.errorcode.ErrorCode;
 import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,7 +26,7 @@ public class OpUserBiz {
     private OpUserDao dao;
     @Resource
     private OpUserJdbcDao jdbcDao;
-    @Autowired
+    @Resource
     private WebTokenBiz webTokenBiz;
 
     public OpUser getById(long id) throws Throwable {

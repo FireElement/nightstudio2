@@ -12,6 +12,8 @@ INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JEDI
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JEDIS_MAX_WAIT', '30000', '2016-04-19 15:24:40', '2016-04-19 16:15:15');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JEDIS_TEST_ON_BORROW', 'true', '2016-04-19 15:25:18', '2016-04-19 16:15:19');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JPUSH_APP_KEY', '543290c593851cdf265a8e1d', '2016-04-19 15:42:28', '2016-04-19 16:15:24');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JPUSH_DRIVER_APP_KEY', '543290c593851cdf265a8e1d', '2016-08-13 17:37:16', '2016-08-13 17:37:20');
+INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JPUSH_DRIVER_MASTER_SECRET', '5cc41fa9ac52f5193380f486', '2016-08-13 17:37:40', '2016-08-13 17:37:44');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JPUSH_MASTER_SECRET', '5cc41fa9ac52f5193380f486', '2016-04-19 15:41:46', '2016-04-19 16:15:28');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('JPUSH_MAX_RETRY_TIME', '3', '2016-04-19 15:44:23', '2016-04-19 16:15:35');
 INSERT INTO template.param (name, value, create_time, update_time) VALUES ('LAST_APP_DOWNLOAD_URL_1_1', 'http://app.ka-tuan.com/KatuanDriver_1.0.0.apk', '2016-05-12 14:11:47', '2016-05-26 13:28:20');

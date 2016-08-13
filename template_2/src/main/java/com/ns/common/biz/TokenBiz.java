@@ -8,7 +8,7 @@ import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
 import com.ns.common.util.string.StringUtil;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Random;
@@ -16,7 +16,7 @@ import java.util.Random;
 /**
  * Created by caoxuezhu01 on 14-9-14.
  */
-@Component
+@Service
 public class TokenBiz {
     Random random = new Random();
     @Resource

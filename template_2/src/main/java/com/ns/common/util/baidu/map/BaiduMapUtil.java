@@ -2,15 +2,16 @@ package com.ns.common.util.baidu.map;
 
 import com.ns.common.biz.ParamBiz;
 import com.ns.common.util.constant.ParamConstant;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Created by xuezhucao on 16/7/6.
  */
-@Component
+@Service
 public class BaiduMapUtil {
-    @Autowired
+    @Resource
     private ParamBiz paramBiz;
 
     protected static final String URL = "http://api.map.baidu.com";

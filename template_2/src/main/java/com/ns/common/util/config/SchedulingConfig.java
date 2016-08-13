@@ -3,10 +3,11 @@ package com.ns.common.util.config;
 import com.ns.common.biz.MqBiz;
 import com.ns.common.dao.MongoTestDao;
 import com.ns.common.dao.MongoTestMongoDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+
+import javax.annotation.Resource;
 
 /**
  * Created by xuezhucao on 16/6/16.
@@ -14,11 +15,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 @Configuration
 @EnableScheduling
 public class SchedulingConfig {
-    @Autowired
+    @Resource
     private MqBiz mqBiz;
-    @Autowired
+    @Resource
     private MongoTestDao mongoTestDao;
-    @Autowired
+    @Resource
     private MongoTestMongoDao mongoTestMongoDao;
 
     @Scheduled(cron = "0/20 * * * * ?")

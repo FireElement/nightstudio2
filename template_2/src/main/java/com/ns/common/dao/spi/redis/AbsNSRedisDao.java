@@ -2,10 +2,10 @@ package com.ns.common.dao.spi.redis;
 
 import com.ns.common.util.gson.GsonUtil;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  * Created by xuezhucao on 16/7/1.
  */
 public class AbsNSRedisDao {
-    @Autowired
+    @Resource
     private RedisTemplate<String, String> redisTemplate;
 
     protected String get(String key) throws Throwable {

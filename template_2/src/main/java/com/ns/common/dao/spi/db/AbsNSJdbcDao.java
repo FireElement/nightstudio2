@@ -3,13 +3,13 @@ package com.ns.common.dao.spi.db;
 import com.ns.common.util.exception.sys.ParameterException;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
+import javax.annotation.Resource;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  * Created by xuezhucao on 16/6/14.
  */
 public abstract class AbsNSJdbcDao<T> {
-    @Autowired
+    @Resource
     private JdbcTemplate jdbcTemplate;
 
     public abstract String getTableName();

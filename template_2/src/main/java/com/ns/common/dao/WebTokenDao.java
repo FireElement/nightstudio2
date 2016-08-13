@@ -5,14 +5,14 @@ import com.ns.common.dao.spi.redis.AbsNSRedisDao;
 import com.ns.common.util.redis.RedisUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by caoxuezhu01 on 14-9-21.
  */
-@Component
+@Service
 public class WebTokenDao extends AbsNSRedisDao {
     private static Log logger = LogFactory.getLog(WebTokenDao.class);
 

@@ -5,7 +5,6 @@ import com.ns.common.bean.Token;
 import com.ns.common.biz.OpUserBiz;
 import com.ns.common.biz.WebTokenBiz;
 import com.ns.common.util.constant.PathConstant;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +17,7 @@ import javax.annotation.Resource;
 public class WebOpUserAction {
     @Resource
     private OpUserBiz biz;
-    @Autowired
+    @Resource
     private WebTokenBiz webTokenBiz;
 
     /*@RequestMapping("/getById")

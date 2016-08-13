@@ -2,13 +2,14 @@ package com.ns.common.dao.spi.mongodb;
 
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.annotation.Resource;
 
 /**
  * Created by xuezhucao on 16/8/4.
  */
 public abstract class AbsNsMongoDao<T> {
-    @Autowired
+    @Resource
     private Datastore ds;
 
     public Query<T> createQuery(Class<T> tClass) throws Throwable {
