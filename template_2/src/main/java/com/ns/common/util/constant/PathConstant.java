@@ -9,5 +9,6 @@ public interface PathConstant {
     String COMMON_PREFIX = "/common";
 
     String INVALID_TOKEN = APP_PREFIX + "/token/invalidToken";
+    String WEB_INVALID_TOKEN = WEB_PREFIX + "/token/invalidToken";
     String INVALID_SIG = COMMON_PREFIX + "/sig/invalidSig";
 }
