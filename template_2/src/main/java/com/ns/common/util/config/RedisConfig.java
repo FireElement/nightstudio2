@@ -19,8 +19,8 @@ public class RedisConfig {
     public JedisConnectionFactory redisConnectionFactory(ParamBiz paramBiz) throws Throwable {
         JedisConnectionFactory factory = new JedisConnectionFactory();
         factory.setHostName(paramBiz.getStringByName(ParamConstant.Key.REDIS_SERVER_1_IP));
-        factory.setPort(6379);
-        factory.setPassword("");
+        factory.setPort(paramBiz.getIntByName(ParamConstant.Key.REDIS_SERVER_1_PORT));
+        factory.setPassword(paramBiz.getStringByName(ParamConstant.Key.REDIS_SERVER_1_PASSWD));
         return factory;
     }
 
