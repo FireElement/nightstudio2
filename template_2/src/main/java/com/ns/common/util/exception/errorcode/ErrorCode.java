@@ -21,7 +21,12 @@ public enum ErrorCode {
     ALREADY_LAST_CONFIG("17:已经是最新的配置"),
     CREATE_MARK_FAIL("18:创建埋点失败"),
     MARK_NOT_EXIST("19:埋点不存在"),
-    INVALID_TIMER_TASK_PROCESS_TIME("20:无效的定时任务处理时间");
+    INVALID_TIMER_TASK_PROCESS_TIME("20:无效的定时任务处理时间"),
+    INVALID_WX_ACCESS_TOKEN("21:无效的微信access token"),
+    REFRESH_WX_ACCESS_TOKEN_FAIL("22:刷新微信access token失败"),
+    CREATE_WX_ACCESS_TOKEN_FAIL("23:创建微信access token失败"),
+    UNBIND_WX_OPEN_ID_AND_USER_ID_FAIL("24:解绑微信open id跟用户id失败"),
+    GET_USER_ID_BY_OPEN_ID_FAIL("25:根据open id查找绑定的用户失败");
 
 	private String value;
 	

@@ -64,6 +64,12 @@ public class TokenBiz {
         return token;
     }
 
+    public Token create(long userId) throws Throwable {
+        Token token = new Token();
+        token.setUserId(userId);
+        return create(token);
+    }
+
     public void delete(Token token) throws Throwable {
         if (token == null ||
             token.getUserId() == null ||

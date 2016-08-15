@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `op_user` (
 
 CREATE UNIQUE INDEX `name_UNIQUE` ON `op_user` (`name` ASC)  COMMENT '';
 
+
 -- -----------------------------------------------------
 -- Table `param`
 -- -----------------------------------------------------
@@ -43,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `param` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COMMENT = '参数及常量表';
+
 
 -- -----------------------------------------------------
 -- Table `sms_template`
@@ -62,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `sms_template` (
 
 CREATE UNIQUE INDEX `template_id_UNIQUE` ON `sms_template` (`template_id` ASC)  COMMENT '';
 
+
 -- -----------------------------------------------------
 -- Table `push_template`
 -- -----------------------------------------------------
@@ -79,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `push_template` (
     COMMENT = 'push模板表';
 
 CREATE UNIQUE INDEX `template_id_UNIQUE` ON `push_template` (`template_id` ASC)  COMMENT '';
+
 
 -- -----------------------------------------------------
 -- Table `email_template`
@@ -100,6 +104,7 @@ CREATE TABLE IF NOT EXISTS `email_template` (
 
 CREATE UNIQUE INDEX `template_id_UNIQUE` ON `email_template` (`template_id` ASC)  COMMENT '';
 
+
 -- -----------------------------------------------------
 -- Table `timer_task`
 -- -----------------------------------------------------
@@ -119,6 +124,23 @@ CREATE TABLE IF NOT EXISTS `timer_task` (
     COMMENT = '定时任务表';
 
 CREATE INDEX `index2` ON `timer_task` (`processor` ASC, `process_time` ASC)  COMMENT '';
+
+
+-- -----------------------------------------------------
+-- Table `wx_user`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `wx_user` ;
+
+CREATE TABLE IF NOT EXISTS `wx_user` (
+    `open_id` VARCHAR(128) NOT NULL COMMENT '',
+    `user_id` BIGINT(20) NULL COMMENT '',
+    `user_info` VARCHAR(2048) NULL COMMENT '',
+    `create_time` DATETIME NOT NULL COMMENT '',
+    `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
+    PRIMARY KEY (`open_id`)  COMMENT '')
+    ENGINE = InnoDB;
+
+CREATE INDEX `index2` ON `wx_user` (`user_id` ASC)  COMMENT '';
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
