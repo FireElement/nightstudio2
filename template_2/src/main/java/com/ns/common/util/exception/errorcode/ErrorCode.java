@@ -16,7 +16,9 @@ public enum ErrorCode {
     INVALID_SIG("12:无效的sig"),
     UPLOAD_IMG_FAIL("13:上传图片失败"),
     SEND_SMS_FAIL("14:发送短信失败"),
-    INVALID_MOBILE("15:无效的手机号");
+    INVALID_MOBILE("15:无效的手机号"),
+    GET_LAST_CONFIG_VERSION_FAIL("16:获取最新的配置版本失败"),
+    ALREADY_LAST_CONFIG("17:已经是最新的配置");
 
 	private String value;
 	
