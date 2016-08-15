@@ -33,15 +33,15 @@ public class JPushSender implements IPushSender {
     private static Log logger = LogFactory.getLog(JPushSender.class);
     @Resource
     private ParamBiz paramBiz;
-    private JPushClient driverClient = null;
+    private JPushClient client1 = null;
     private CountDownLatch latch = new CountDownLatch(1);
 
     @PostConstruct
     public void init() {
         try {
-            driverClient = new JPushClient(
-                    paramBiz.getStringByName(ParamConstant.Key.JPUSH_DRIVER_MASTER_SECRET),
-                    paramBiz.getStringByName(ParamConstant.Key.JPUSH_DRIVER_APP_KEY),
+            client1 = new JPushClient(
+                    paramBiz.getStringByName(ParamConstant.Key.JPUSH_CLIENT_1_MASTER_SECRET),
+                    paramBiz.getStringByName(ParamConstant.Key.JPUSH_CLIENT_1_APP_KEY),
                     paramBiz.getIntByName(ParamConstant.Key.JPUSH_MAX_RETRY_TIME));
         } catch (Throwable e) {
             logger.warn("", e);
@@ -50,9 +50,15 @@ public class JPushSender implements IPushSender {
     }
 
     @Override
-    public void push2Driver(long userId, long type, String msg, String page, Map<String, String> params) throws Throwable {
+    public void push2Client1(long userId, long type, String msg, String page, Map<String, String> params) throws Throwable {
         latch.await();
-        push(driverClient, getPayload(userId, type, msg, page, params));
+        push(client1, getPayload(userId, type, msg, page, params));
+    }
+
+    @Override
+    public void push2Client1(List<Long> userIds, long type, String msg, String page, Map<String, String> params) throws Throwable {
+        latch.await();
+        push(client1, getPayloadForUsers(userIds, type, msg, page, params));
     }
 
     protected PushPayload getPayload(long userId, long type, String msg, String page, Map<String, String> params) {
