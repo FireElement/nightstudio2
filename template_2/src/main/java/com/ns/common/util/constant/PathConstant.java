@@ -6,6 +6,7 @@ package com.ns.common.util.constant;
 public interface PathConstant {
     String APP_PREFIX = "/app";
     String WEB_PREFIX = "/web";
+    String WX_PREFIX = "/wx";
     String COMMON_PREFIX = "/common";
 
     String INVALID_TOKEN = APP_PREFIX + "/token/invalidToken";

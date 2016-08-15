@@ -4,7 +4,6 @@ import com.ns.common.util.constant.PathConstant;
 import com.ns.common.util.exception.errorcode.ErrorCode;
 import com.ns.common.util.exception.sys.NSException;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(PathConstant.COMMON_PREFIX + "/sig")
 public class SigAction {
+
     @RequestMapping("/invalidSig")
-    @ResponseBody
     public Object invalidSig() throws Throwable {
         throw new NSException(ErrorCode.INVALID_SIG);
     }

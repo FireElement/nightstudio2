@@ -7,10 +7,17 @@ public interface FilterConstant {
     String[] TOKEN_FILTER_IGNORE_PATHS = {
             "app/app/getLastVersionAndDownloadUrl",
             "app/token/checkToken",
-            "app/token/invalidToken"
+            "app/token/invalidToken",
+            "app/config/getLastVersion",
+            "app/config/getLastConfig",
+            "wx/accessToken/checkAndRefreshAccessToken",
+            "wx/accessToken/createAccessToken",
+            "wx/accessToken/loginWithAccessToken",
+            "wx/jssdk/getConfig"
     };
     String[] TOKEN_FILTER_PATHS = {
-            PathConstant.APP_PREFIX
+            PathConstant.APP_PREFIX,
+            PathConstant.WX_PREFIX
     };
 
     String[] WEB_TOKEN_FILTER_IGNORE_PATHS = {
