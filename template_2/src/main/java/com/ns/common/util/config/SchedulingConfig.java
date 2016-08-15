@@ -1,7 +1,6 @@
 package com.ns.common.util.config;
 
-import com.ns.common.dao.MongoTestDao;
-import com.ns.common.dao.MongoTestMongoDao;
+import com.ns.common.biz.MarkBiz;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,22 +14,20 @@ import javax.annotation.Resource;
 @EnableScheduling
 public class SchedulingConfig {
     @Resource
-    private MongoTestDao mongoTestDao;
-    @Resource
-    private MongoTestMongoDao mongoTestMongoDao;
+    private MarkBiz markBiz;
 
     @Scheduled(cron = "0/20 * * * * ?")
     public void scheduler() throws Throwable {
-        /*mongoTestDao.deleteAll();
+        /*Mark mark = new Mark();
+        mark.setType(MarkConstant.Type.TEST);
 
-        mongoTestMongoDao.insert(new MongoTest("Smith", "Alice"));
+        mark = markBiz.create(mark);
 
-        mongoTestDao.save(new MongoTest("Smith", "Alice"));
-        mongoTestDao.save(new MongoTest("Smith", "Bob"));
+        System.out.println(mark.getId());
 
-        for (MongoTest mongoTest : mongoTestDao.findByFirstName("Smith")) {
-            System.out.println(mongoTest);
-        }*/
+        mark = markBiz.getByValue(mark.getValue());
+
+        System.out.println(mark.getValue());*/
 
 //        System.out.println(">>>>>>>>> SchedulingConfig.scheduler()");
     }

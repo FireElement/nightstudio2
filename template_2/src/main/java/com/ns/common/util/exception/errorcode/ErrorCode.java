@@ -18,7 +18,9 @@ public enum ErrorCode {
     SEND_SMS_FAIL("14:发送短信失败"),
     INVALID_MOBILE("15:无效的手机号"),
     GET_LAST_CONFIG_VERSION_FAIL("16:获取最新的配置版本失败"),
-    ALREADY_LAST_CONFIG("17:已经是最新的配置");
+    ALREADY_LAST_CONFIG("17:已经是最新的配置"),
+    CREATE_MARK_FAIL("18:创建埋点失败"),
+    MARK_NOT_EXIST("19:埋点不存在");
 
 	private String value;
 	
