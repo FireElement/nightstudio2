@@ -3,9 +3,7 @@ package com.ns.common.biz;
 import com.ns.common.bean.OpUser;
 import com.ns.common.bean.Token;
 import com.ns.common.dao.OpUserDao;
-import com.ns.common.dao.OpUserJdbcDao;
 import com.ns.common.mgr.OpUserMgr;
-import com.ns.common.util.datetime.DateTimeUtil;
 import com.ns.common.util.exception.errorcode.ErrorCode;
 import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
@@ -13,7 +11,6 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created by xuezhucao on 16/6/12.
@@ -25,8 +22,6 @@ public class OpUserBiz {
     @Resource
     private OpUserDao dao;
     @Resource
-    private OpUserJdbcDao jdbcDao;
-    @Resource
     private WebTokenBiz webTokenBiz;
 
     public OpUser getById(long id) throws Throwable {
@@ -37,19 +32,11 @@ public class OpUserBiz {
         return dao.getByName(name);
     }
 
-    public OpUser getByName1(String name) {
-        return jdbcDao.getByName(name);
-    }
-
     public String getPasswdByName(String name) throws Throwable {
         if (StringUtils.isEmpty(name)) {
             throw new ParameterException("用户名为空");
         }
         return dao.getPasswdByName(name);
-    }
-
-    public List<OpUser> getAll() {
-        return jdbcDao.getAll();
     }
 
     public Token login(String name, String passwd) throws Throwable {
@@ -72,16 +59,6 @@ public class OpUserBiz {
 
     public void logout(Token token) throws Throwable {
         webTokenBiz.delete(token);
-    }
-
-    public OpUser insert(OpUser opUser) throws Throwable {
-        opUser.setCreateTime(DateTimeUtil.getNowDate());
-        jdbcDao.insert(opUser);
-        return opUser;
-    }
-
-    public OpUser modify(OpUser opUser) throws Throwable {
-        return jdbcDao.update(opUser);
     }
 
     public int modifyPasswd(String name, String passwd) {

@@ -37,9 +37,6 @@ public abstract class ITimerTaskHandler {
                 case TimerTaskConstant.Type.SEND_SMS:
                     sendSms(param);
                     break;
-                case TimerTaskConstant.Type.SEND_PUSH:
-                    sendPush(param);
-                    break;
                 default:
                     logger.warn("invalid timer task type: " + type);
             }

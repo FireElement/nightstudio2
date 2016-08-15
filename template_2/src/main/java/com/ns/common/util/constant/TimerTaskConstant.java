@@ -9,11 +9,9 @@ public interface TimerTaskConstant {
 
     interface Type {
         int SEND_SMS = 1;
-        int SEND_PUSH = 2;
 
         Integer[] ALL = {
-                SEND_SMS,
-                SEND_PUSH
+                SEND_SMS
         };
     }
 

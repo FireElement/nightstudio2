@@ -28,16 +28,6 @@ public class WebOpUserAction {
     @RequestMapping("/getByName")
     public Object getByName(@RequestParam String name) throws Throwable {
         return biz.getByName(name);
-    }
-
-    @RequestMapping("/getByName1")
-    public Object getByName1(@RequestParam String name) {
-        return biz.getByName1(name);
-    }
-
-    @RequestMapping("/getAll")
-    public Object getAll() {
-        return biz.getAll();
     }*/
 
     @RequestMapping("/login")
@@ -54,17 +44,7 @@ public class WebOpUserAction {
         return null;
     }
 
-    /*@RequestMapping("/insert")
-    public Object insert(@ModelAttribute OpUser opUser) throws Throwable {
-        return biz.insert(opUser);
-    }
-
-    @RequestMapping("/modify")
-    public Object modify(@ModelAttribute OpUser opUser) throws Throwable {
-        return biz.modify(opUser);
-    }
-
-    @RequestMapping("/modifyPasswd")
+    /*@RequestMapping("/modifyPasswd")
     public Object modifyPasswd(@RequestParam String name, String passwd) {
         return biz.modifyPasswd(name, passwd);
     }*/

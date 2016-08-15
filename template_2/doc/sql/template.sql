@@ -100,6 +100,26 @@ CREATE TABLE IF NOT EXISTS `email_template` (
 
 CREATE UNIQUE INDEX `template_id_UNIQUE` ON `email_template` (`template_id` ASC)  COMMENT '';
 
+-- -----------------------------------------------------
+-- Table `timer_task`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `timer_task` ;
+
+CREATE TABLE IF NOT EXISTS `timer_task` (
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '',
+    `type` INT(11) NOT NULL COMMENT '任务类型：1、发定时短信；2、发定时push',
+    `param` VARCHAR(512) NULL COMMENT '参数',
+    `process_time` DATETIME NOT NULL COMMENT '处理时间',
+    `processor` VARCHAR(64) NULL COMMENT '处理的机器',
+    `create_time` DATETIME NOT NULL COMMENT '',
+    `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
+    PRIMARY KEY (`id`)  COMMENT '')
+    ENGINE = InnoDB
+    DEFAULT CHARACTER SET = utf8
+    COMMENT = '定时任务表';
+
+CREATE INDEX `index2` ON `timer_task` (`processor` ASC, `process_time` ASC)  COMMENT '';
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

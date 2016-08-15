@@ -1,16 +1,22 @@
 package com.ns.common.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.Date;
 import java.util.Map;
 
 /**
  * Created by xuezhucao on 16/4/15.
  */
+@Entity
 public class TimerTask {
+    @Id
     private Long id;
     private Integer type;
     private String param;
     private Date processTime;
+    @Transient
     private Map<String, String> paramMap;
     private String processor;
     private Date createTime;

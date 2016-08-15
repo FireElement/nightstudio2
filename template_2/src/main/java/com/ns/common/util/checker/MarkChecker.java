@@ -5,12 +5,12 @@ import com.ns.common.util.bean.MarkUtil;
 import com.ns.common.util.exception.sys.ParameterException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by xuezhucao on 16/4/11.
  */
-@Component
+@Service
 public class MarkChecker {
     private static Log logger = LogFactory.getLog(MarkChecker.class);
 
