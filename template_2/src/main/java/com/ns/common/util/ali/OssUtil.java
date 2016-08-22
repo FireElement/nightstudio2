@@ -11,7 +11,6 @@ import com.ns.common.util.exception.sys.ParameterException;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -22,7 +21,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by xuezhucao on 15/7/21.
  */
-@Service
+//@Service
 public class OssUtil {
     private static Log logger = LogFactory.getLog(OssUtil.class);
     @Resource

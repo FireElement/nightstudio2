@@ -7,12 +7,11 @@ import com.ns.common.mgr.EmailTemplateMgr;
 import com.ns.common.util.mq.MqSender;
 import com.ns.common.util.sms.ISmsSender;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by xuezhucao on 16/7/27.
  */
-@Configuration
+//@Configuration
 public class EmailConfig {
     @Bean
     EmailTemplateMgr emailTemplateMgr(EmailTemplateDao emailTemplateDao) {

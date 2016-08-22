@@ -5,7 +5,6 @@ import com.ns.common.biz.SmsBiz;
 import com.ns.common.util.constant.PushConstant;
 import com.ns.common.util.constant.SmsConstant;
 import com.ns.common.util.constant.TimerTaskConstant;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -13,7 +12,7 @@ import java.util.Map;
 /**
  * Created by xuezhucao on 16/4/15.
  */
-@Service
+//@Service
 public class TimerTaskHandler extends ITimerTaskHandler {
     @Resource
     private SmsBiz smsBiz;

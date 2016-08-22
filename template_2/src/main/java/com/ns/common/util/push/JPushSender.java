@@ -15,7 +15,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -28,7 +27,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by xuezhucao on 15/9/10.
  */
-@Service
+//@Service
 public class JPushSender implements IPushSender {
     private static Log logger = LogFactory.getLog(JPushSender.class);
     @Resource

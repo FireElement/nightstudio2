@@ -9,14 +9,13 @@ import com.ns.common.util.constant.ParamConstant;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 /**
  * Created by xuezhucao on 16/8/13.
  */
-@Configuration
+//@Configuration
 public class MongodbConfig {
     @Bean
     MongoClient mongoClient(ParamBiz paramBiz) throws Throwable {

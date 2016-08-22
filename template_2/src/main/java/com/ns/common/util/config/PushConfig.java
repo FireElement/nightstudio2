@@ -5,12 +5,11 @@ import com.ns.common.dao.PushTemplateDao;
 import com.ns.common.mgr.PushTemplateMgr;
 import com.ns.common.util.push.IPushSender;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by xuezhucao on 16/7/27.
  */
-@Configuration
+//@Configuration
 public class PushConfig {
     @Bean
     PushTemplateMgr pushTemplateMgr(PushTemplateDao pushTemplateDao) {

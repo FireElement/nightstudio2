@@ -14,7 +14,6 @@ import org.apache.commons.logging.LogFactory;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -24,7 +23,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by xuezhucao on 15/9/7.
  */
-@Service
+//@Service
 public class WinnerSender implements ISmsSender {
     private static Log logger = LogFactory.getLog(WinnerSender.class);
     @Resource

@@ -14,7 +14,6 @@ import com.ns.common.util.uuid.UuidUtil;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -23,7 +22,7 @@ import java.util.List;
 /**
  * Created by xuezhucao on 16/4/15.
  */
-@Service
+//@Service
 public class TimerTaskBiz {
     private static Log logger = LogFactory.getLog(TimerTaskBiz.class);
     @Resource
