@@ -36,7 +36,7 @@ public class SmsBiz implements IMqReceiver {
     }
 
     public void sendTemplate1() throws Throwable {
-        send(1, SmsConstant.Template.TMPLATE_1);
+        send(1, SmsConstant.Template.TEST);
     }
 
     public void send(long userId, long templateId, Object... args) throws Throwable {

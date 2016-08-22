@@ -8,17 +8,17 @@ public class PushConstant {
     public static final String PARAM_PAGE = "page";
 
     public interface Template {
-        Long WAITING_CONFIRM_ORDER = 1L;
+        Long TEST = 1L;
     }
 
     public interface Page {
-        String DRIVER_ORDER_DETAIL = "driver/orderDetail";  //司机端货源详情页
+        String PAGE1 = "page1";
     }
 
     public static final Map<Long, String> PAGE_MAP = new HashMap<Long, String>(10);
 
     static {
-        PAGE_MAP.put(Template.WAITING_CONFIRM_ORDER, Page.DRIVER_ORDER_DETAIL);
+        PAGE_MAP.put(Template.TEST, Page.PAGE1);
     }
 
 }

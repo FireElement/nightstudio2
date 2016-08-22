@@ -1,2 +1,1 @@
-ALTER TABLE template.email_template AUTO_INCREMENT = 1;
-INSERT INTO template.email_template (template_id, subject, content, receiver, create_time, update_time) VALUES (1, 'title', 'content', 'mail@template.net', '2016-04-29 12:53:14', '2016-07-12 11:47:24');
+INSERT INTO email_template (id, template_id, subject, content, receiver, create_time, update_time) VALUES (1, 1, 'title', 'content', 'mail@template.net', '2016-04-29 12:53:14', '2016-07-12 11:47:24');

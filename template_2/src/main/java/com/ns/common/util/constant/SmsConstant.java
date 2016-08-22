@@ -5,6 +5,6 @@ package com.ns.common.util.constant;
  */
 public interface SmsConstant {
     interface Template {
-        Long TMPLATE_1 = 1L;
+        Long TEST = 1L;
     }
 }
