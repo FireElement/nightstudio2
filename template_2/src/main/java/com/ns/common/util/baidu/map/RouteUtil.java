@@ -7,7 +7,11 @@ import com.ns.common.util.exception.sys.SystemInternalException;
 import com.ns.common.util.gson.GsonUtil;
 import com.ns.common.util.http.HttpUtil;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.ArrayUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by xuezhucao on 16/7/6.
