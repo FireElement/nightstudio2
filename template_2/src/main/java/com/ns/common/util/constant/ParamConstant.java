@@ -60,5 +60,7 @@ public interface ParamConstant {
         String IMG_SERVER = "IMG_SERVER";
 
         String BAIDU_MAP_AK = "BAIDU_MAP_AK";
+
+        String ENV = "ENV";
     }
 }

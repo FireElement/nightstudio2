@@ -52,9 +52,11 @@ public class EmailBiz implements IMqReceiver {
             map.put("subject", subject);
             map.put("content", content);
             map.put("receiver", receiver);
-
-            mqSender.send(getQueue(), map);
-            logger.debug(String.format("add email to queue success, %s, %s", subject, content, receiver));
+            logger.debug(String.format("email subject and content is: %s, %s", subject, content));
+            if (paramBiz.isOnline()) {
+                mqSender.send(getQueue(), map);
+                logger.debug(String.format("add email to queue success, %s", receiver));
+            }
         } catch (Throwable e) {
             logger.warn("", e);
         }
@@ -76,9 +78,11 @@ public class EmailBiz implements IMqReceiver {
             map.put("subject", subject);
             map.put("content", content);
             map.put("receiver", receiver);
-
-            mqSender.send(getQueue(), map);
-            logger.debug(String.format("add email to queue success, %s, %s", subject, content, receiver));
+            logger.debug(String.format("email subject and content is: %s, %s", subject, content));
+            if (paramBiz.isOnline()) {
+                mqSender.send(getQueue(), map);
+                logger.debug(String.format("add email to queue success, %s", receiver));
+            }
         } catch (Throwable e) {
             logger.warn("", e);
         }

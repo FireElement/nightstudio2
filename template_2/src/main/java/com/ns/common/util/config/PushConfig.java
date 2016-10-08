@@ -1,5 +1,6 @@
 package com.ns.common.util.config;
 
+import com.ns.common.biz.ParamBiz;
 import com.ns.common.biz.PushBiz;
 import com.ns.common.dao.PushTemplateDao;
 import com.ns.common.mgr.PushTemplateMgr;
@@ -17,7 +18,7 @@ public class PushConfig {
     }
 
     @Bean
-    PushBiz pushBiz(PushTemplateMgr pushTemplateMgr, IPushSender sender) {
-        return new PushBiz(pushTemplateMgr, sender);
+    PushBiz pushBiz(ParamBiz paramBiz, PushTemplateMgr pushTemplateMgr, IPushSender sender) {
+        return new PushBiz(paramBiz, pushTemplateMgr, sender);
     }
 }

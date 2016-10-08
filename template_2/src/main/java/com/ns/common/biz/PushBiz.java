@@ -7,6 +7,7 @@ import com.ns.common.util.push.IPushSender;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -16,10 +17,11 @@ import java.util.Map;
 public class PushBiz {
     private static Log logger = LogFactory.getLog(PushBiz.class);
     private static final int CLIENT_1 = 1;
+    private ParamBiz paramBiz;
     private PushTemplateMgr mgr;
     private IPushSender sender;
 
-    public PushBiz(PushTemplateMgr pushTemplateMgr, IPushSender sender) {
+    public PushBiz(ParamBiz paramBiz, PushTemplateMgr pushTemplateMgr, IPushSender sender) {
         this.mgr = pushTemplateMgr;
         this.sender = sender;
     }
@@ -35,10 +37,14 @@ public class PushBiz {
 
         String page = PushConstant.PAGE_MAP.get(templateId);
 
-        switch (client) {
-            case CLIENT_1:
-                sender.push2Client1(userId, templateId, content, page, params);
-                break;
+        logger.debug(String.format("push to user %s: %s, %s", userId, content, page));
+
+        if (paramBiz.isOnline()) {
+            switch (client) {
+                case CLIENT_1:
+                    sender.push2Client1(userId, templateId, content, page, params);
+                    break;
+            }
         }
     }
 
@@ -53,10 +59,14 @@ public class PushBiz {
 
         String page = PushConstant.PAGE_MAP.get(templateId);
 
-        switch (client) {
-            case CLIENT_1:
-                sender.push2Client1(userIds, templateId, content, page, params);
-                break;
+        logger.debug(String.format("push to users %s: %s, %s", Arrays.toString(userIds.toArray()), content, page));
+
+        if (paramBiz.isOnline()) {
+            switch (client) {
+                case CLIENT_1:
+                    sender.push2Client1(userIds, templateId, content, page, params);
+                    break;
+            }
         }
     }
 }

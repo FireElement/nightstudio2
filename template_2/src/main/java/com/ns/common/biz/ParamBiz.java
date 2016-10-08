@@ -71,4 +71,12 @@ public class ParamBiz {
                 ParamConstant.Pattern.LAST_APP_DOWNLOAD_URL, platform, appId));
     }
 
+    public Boolean isOnline() throws Throwable {
+        String env = getStringByName(ParamConstant.Key.ENV);
+        if ("online".equalsIgnoreCase(env)) {
+            return true;
+        }
+        return false;
+    }
+
 }
