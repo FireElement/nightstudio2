@@ -26,10 +26,11 @@ import java.util.Map;
 public class SmsBiz implements IMqReceiver {
     private static Log logger = LogFactory.getLog(SmsBiz.class);
     private SmsTemplateMgr mgr;
+    private ParamBiz paramBiz;
     private MqSender mqSender;
     private ISmsSender smsSender;
 
-    public SmsBiz(SmsTemplateMgr smsTemplateMgr, MqSender mqSender, ISmsSender smsSender) {
+    public SmsBiz(ParamBiz paramBiz, SmsTemplateMgr smsTemplateMgr, MqSender mqSender, ISmsSender smsSender) {
         this.mgr = smsTemplateMgr;
         this.mqSender = mqSender;
         this.smsSender = smsSender;
@@ -63,8 +64,11 @@ public class SmsBiz implements IMqReceiver {
             Map<String, Object> map = new HashMap<>(2);
             map.put("mobile", mobile);
             map.put("content", content);
-            mqSender.send(getQueue(), map);
-            logger.debug(String.format("add sms to queue success, %s, %s", mobile, content));
+            logger.debug(String.format("sms content is: %s", content));
+            if (paramBiz.isOnline()) {
+                mqSender.send(getQueue(), map);
+                logger.debug(String.format("add sms to queue success, %s", mobile));
+            }
         } catch (Throwable e) {
             logger.warn("", e);
         }
@@ -87,8 +91,11 @@ public class SmsBiz implements IMqReceiver {
             Map<String, Object> map = new HashMap<>(2);
             map.put("mobiles", StringUtils.join(mobiles, ','));
             map.put("content", content);
-            mqSender.send(getQueue(), map);
-            logger.debug(String.format("add sms to queue success, %s, %s", Arrays.toString(mobiles), content));
+            logger.debug(String.format("sms content is: %s", content));
+            if (paramBiz.isOnline()) {
+                mqSender.send(getQueue(), map);
+                logger.debug(String.format("add sms to queue success, %s", Arrays.toString(mobiles)));
+            }
         } catch (Throwable e) {
             logger.warn("", e);
         }

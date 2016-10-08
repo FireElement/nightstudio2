@@ -1,5 +1,6 @@
 package com.ns.common.util.config;
 
+import com.ns.common.biz.ParamBiz;
 import com.ns.common.biz.SmsBiz;
 import com.ns.common.dao.SmsTemplateDao;
 import com.ns.common.mgr.SmsTemplateMgr;
@@ -18,7 +19,7 @@ public class SmsConfig {
     }
 
     @Bean
-    SmsBiz smsBiz(SmsTemplateMgr smsTemplateMgr, MqSender mqSender, ISmsSender smsSender) {
-        return new SmsBiz(smsTemplateMgr, mqSender, smsSender);
+    SmsBiz smsBiz(ParamBiz paramBiz, SmsTemplateMgr smsTemplateMgr, MqSender mqSender, ISmsSender smsSender) {
+        return new SmsBiz(paramBiz, smsTemplateMgr, mqSender, smsSender);
     }
 }
