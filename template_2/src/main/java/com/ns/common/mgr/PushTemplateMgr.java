@@ -51,7 +51,7 @@ public class PushTemplateMgr {
                 logger.warn("no push template got");
             } else {
                 for (PushTemplate template : templates) {
-                    logger.debug("get push template: " + template.getTemplateId());
+//                    logger.debug("get push template: " + template.getTemplateId());
                     templateMap.put(template.getTemplateId(), template);
                 }
             }

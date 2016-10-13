@@ -17,6 +17,8 @@ mv $PACKAGE_FOLDER/template $PACKAGE_FOLDER/$PROJ_NAME
 
 SQL_FOLDER=$PROJ_NAME/doc/sql
 mv $SQL_FOLDER/template.sql $SQL_FOLDER/$PROJ_NAME.sql
+mv $SQL_FOLDER/template.mwb $SQL_FOLDER/$PROJ_NAME.mwb
+mv $SQL_FOLDER/template.mwb.bak $SQL_FOLDER/$PROJ_NAME.mwb.bak
 
 sed -i '' -e "s/Schema template/Schema $PROJ_NAME/g" $SQL_FOLDER/$PROJ_NAME.sql
 sed -i '' -e "s/template/$PROJ_NAME/g" $SQL_FOLDER/param.sql

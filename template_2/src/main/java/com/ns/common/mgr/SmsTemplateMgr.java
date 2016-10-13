@@ -54,7 +54,7 @@ public class SmsTemplateMgr {
                 logger.warn("no sms template got");
             } else {
                 for (SmsTemplate template : templates) {
-                    logger.debug("get sms template: " + template.getTemplateId());
+//                    logger.debug("get sms template: " + template.getTemplateId());
                     templateMap.put(template.getTemplateId(), template);
                 }
             }

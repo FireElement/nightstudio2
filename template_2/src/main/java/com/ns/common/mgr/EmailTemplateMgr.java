@@ -51,7 +51,7 @@ public class EmailTemplateMgr {
                 logger.warn("no email template got");
             } else {
                 for (EmailTemplate template : templates) {
-                    logger.debug("get email template: " + template.getTemplateId());
+//                    logger.debug("get email template: " + template.getTemplateId());
                     templateMap.put(template.getTemplateId(), template);
                 }
             }

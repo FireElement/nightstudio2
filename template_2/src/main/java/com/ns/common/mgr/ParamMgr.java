@@ -54,7 +54,7 @@ public class ParamMgr {
                 logger.warn("no param got");
             } else {
                 for (Param param : params) {
-                    logger.debug("get param: " + param.getName());
+//                    logger.debug("get param: " + param.getName());
                     nameMap.put(param.getName(), param);
                 }
             }
