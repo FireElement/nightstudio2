@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class AopNSDao {
     private static Log logger = LogFactory.getLog(AopNSDao.class);
 
-    @Around("execution(* com.ns.template.source..*(..))")
+    @Around("execution(* com.ns.template.dao..*(..))")
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             return joinPoint.proceed();
