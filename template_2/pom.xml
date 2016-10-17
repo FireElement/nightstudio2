@@ -135,12 +135,15 @@
                     <container>
                         <containerId>tomcat7x</containerId>
                         <home>/Users/xuezhucao/data/environment/programming/java/tomcat/apache-tomcat-7.0.63_2</home>
+                        <timeout>0</timeout>
                     </container>
                     <configuration>
                         <type>standalone</type>
                         <home>${project.build.directory}/tomcat7x</home>
                         <properties>
                             <cargo.jvmargs>-Dfile.encoding=UTF-8 -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=60222</cargo.jvmargs>
+                            <cargo.tomcat.ajp.port>8009</cargo.tomcat.ajp.port>
+                            <cargo.rmi.port>8005</cargo.rmi.port>
                             <cargo.servlet.port>8080</cargo.servlet.port>
                             <cargo.servlet.uriencoding>UTF-8</cargo.servlet.uriencoding>
                         </properties>
