@@ -39,7 +39,7 @@ public class OpUserBiz {
         return dao.getPasswdByName(name);
     }
 
-    public Token login(String name, String passwd) throws Throwable {
+    public OpUser checkPasswd(String name, String passwd) throws Throwable {
         if (StringUtils.isEmpty(name)) {
             throw new ParameterException("用户名为空");
         }
@@ -51,6 +51,12 @@ public class OpUserBiz {
         if (!passwd.equals(p)) {
             throw new NSException(ErrorCode.WRONG_PASSWD);
         }
+        opUser.setPasswd(null);
+        return opUser;
+    }
+
+    public Token login(String name, String passwd) throws Throwable {
+        OpUser opUser = checkPasswd(name, passwd);
 
         Token result = new Token();
         result.setUserId(opUser.getId());

@@ -26,7 +26,8 @@ public enum ErrorCode {
     REFRESH_WX_ACCESS_TOKEN_FAIL("22:刷新微信access token失败"),
     CREATE_WX_ACCESS_TOKEN_FAIL("23:创建微信access token失败"),
     UNBIND_WX_OPEN_ID_AND_USER_ID_FAIL("24:解绑微信open id跟用户id失败"),
-    GET_USER_ID_BY_OPEN_ID_FAIL("25:根据open id查找绑定的用户失败");
+    GET_USER_ID_BY_OPEN_ID_FAIL("25:根据open id查找绑定的用户失败"),
+	UNKOWN_EXCEPTION("26:未知异常");
 
 	private String value;
 	

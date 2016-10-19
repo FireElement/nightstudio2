@@ -31,6 +31,7 @@ SRC_FOLDER=$PROJ_NAME/src/main/java
 
 sed -i '' -e "s/template/$PROJ_NAME/g" $SRC_FOLDER/com/ns/common/aop/AopNSDao.java
 sed -i '' -e "s/template/$PROJ_NAME/g" $SRC_FOLDER/com/ns/common/aop/AopNSJsonAction.java
+sed -i '' -e "s/template/$PROJ_NAME/g" $SRC_FOLDER/com/ns/common/aop/AopNSRpcAction.java
 
 echo "Create $PROJ_NAME Success"
 
