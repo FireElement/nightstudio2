@@ -10,7 +10,7 @@ import java.util.Random;
 public class RandomUtil {
     protected static Random random = new Random();
 
-    public static String getVerifyCode(int digit) {
+    public static String getNum(int digit) {
         List<Integer> digits = new ArrayList<Integer>(digit);
         StringBuilder builder = new StringBuilder(digit);
         int d;
@@ -25,6 +25,6 @@ public class RandomUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(RandomUtil.getVerifyCode(4));
+        System.out.println(RandomUtil.getNum(4));
     }
 }
