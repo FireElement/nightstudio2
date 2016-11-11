@@ -23,6 +23,10 @@ mv $SQL_FOLDER/template.mwb.bak $SQL_FOLDER/$PROJ_NAME.mwb.bak
 sed -i '' -e "s/Schema template/Schema $PROJ_NAME/g" $SQL_FOLDER/$PROJ_NAME.sql
 sed -i '' -e "s/template/$PROJ_NAME/g" $SQL_FOLDER/param.sql
 
+BUILD_FOLDER=$PROJ_NAME/doc/build
+
+sed -i '' -e "s/template/$PROJ_NAME/g" $BUILD_FOLDER/deploy.sh
+
 RESOURCE_FOLDER=$PROJ_NAME/src/main/resources
 
 sed -i '' -e "s/template/$PROJ_NAME/g" $RESOURCE_FOLDER/application.properties
