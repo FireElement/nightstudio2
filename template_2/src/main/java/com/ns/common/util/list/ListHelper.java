@@ -11,7 +11,7 @@ import java.util.List;
 public abstract class ListHelper {
     public static <U, V> List<V> getList(List<U> list, ListCvt<U, V> cvt) {
         if (CollectionUtils.isEmpty(list)) {
-            return null;
+            return new ArrayList<>(0);
         }
         List<V> result = new ArrayList<>(list.size());
         for (U o : list) {

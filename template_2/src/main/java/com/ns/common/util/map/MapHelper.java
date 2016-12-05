@@ -12,7 +12,7 @@ import java.util.Map;
 public abstract class MapHelper {
     public static <K, V> Map<K, V> getMap(List<V> list, ListMapCvt<K, V> cvt) {
         if (CollectionUtils.isEmpty(list)) {
-            return null;
+            return new HashMap<>(0);
         }
         Map<K, V> result = new HashMap<>(list.size());
         for (V o : list) {
