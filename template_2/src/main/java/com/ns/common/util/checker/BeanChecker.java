@@ -1,5 +1,6 @@
 package com.ns.common.util.checker;
 
+import com.ns.common.util.bean.BeanUtil;
 import com.ns.common.util.exception.errorcode.ErrorCode;
 import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
@@ -43,6 +44,18 @@ public abstract class BeanChecker {
     public static void assertBefore(Date date1, Date date2, String errMsg) throws Throwable {
         if (date1 == null || date2 == null
                 || !date1.before(date2)) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertContains(Integer[] arr, Integer obj, String errMsg) throws Throwable {
+        if (!BeanUtil.containsInteger(arr, obj)) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertContains(Long[] arr, Long obj, String errMsg) throws Throwable {
+        if (!BeanUtil.containsLong(arr, obj)) {
             throw new ParameterException(errMsg);
         }
     }
