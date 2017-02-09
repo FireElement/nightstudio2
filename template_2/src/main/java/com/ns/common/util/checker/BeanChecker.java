@@ -20,7 +20,7 @@ public abstract class BeanChecker {
     }
 
     public static void assertNotEmpty(String str, String errMsg) throws Throwable {
-        if (StringUtils.isNotEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new ParameterException(errMsg);
         }
     }
