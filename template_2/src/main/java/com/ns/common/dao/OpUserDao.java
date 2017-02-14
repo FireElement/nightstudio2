@@ -1,16 +1,16 @@
 package com.ns.common.dao;
 
 import com.ns.common.bean.OpUser;
+import com.ns.common.dao.spi.jpa.JpaDao;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by xuezhucao on 16/6/12.
  */
-public interface OpUserDao extends CrudRepository<OpUser, Long> {
+public interface OpUserDao extends JpaDao<OpUser, Long> {
     OpUser getById(long id);
     OpUser getByName(String name);
 

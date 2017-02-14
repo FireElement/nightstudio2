@@ -1,9 +1,9 @@
 package com.ns.common.dao;
 
 import com.ns.common.bean.TimerTask;
+import com.ns.common.dao.spi.jpa.JpaDao;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by xuezhucao on 16/8/15.
  */
-public interface TimerTaskDao extends CrudRepository<TimerTask, Long> {
+public interface TimerTaskDao extends JpaDao<TimerTask, Long> {
 
     List<TimerTask> findByProcessor(String processor);
 
