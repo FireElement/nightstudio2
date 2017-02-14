@@ -22,6 +22,7 @@ public class PushBiz {
     private IPushSender sender;
 
     public PushBiz(ParamBiz paramBiz, PushTemplateMgr pushTemplateMgr, IPushSender sender) {
+        this.paramBiz = paramBiz;
         this.mgr = pushTemplateMgr;
         this.sender = sender;
     }

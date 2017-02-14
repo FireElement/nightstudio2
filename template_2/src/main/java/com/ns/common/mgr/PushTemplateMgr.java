@@ -55,6 +55,7 @@ public class PushTemplateMgr {
                     templateMap.put(template.getTemplateId(), template);
                 }
             }
+            latch.countDown();
         } catch (Throwable e) {
             logger.warn("", e);
         }
