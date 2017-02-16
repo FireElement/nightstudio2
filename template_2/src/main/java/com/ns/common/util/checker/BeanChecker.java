@@ -4,9 +4,11 @@ import com.ns.common.util.bean.BeanUtil;
 import com.ns.common.util.exception.errorcode.ErrorCode;
 import com.ns.common.util.exception.sys.NSException;
 import com.ns.common.util.exception.sys.ParameterException;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -21,6 +23,12 @@ public abstract class BeanChecker {
 
     public static void assertNotEmpty(String str, String errMsg) throws Throwable {
         if (StringUtils.isEmpty(str)) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertNotEmpty(List list, String errMsg) throws Throwable {
+        if (CollectionUtils.isEmpty(list)) {
             throw new ParameterException(errMsg);
         }
     }
