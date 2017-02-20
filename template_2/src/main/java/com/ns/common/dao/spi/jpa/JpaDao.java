@@ -10,6 +10,10 @@ import java.util.List;
  * Created by caoxuezhu on 2017/2/13.
  */
 public interface JpaDao<T, ID extends Serializable> extends CrudRepository<T, ID> {
+    default List<T> findByIds(List<ID> ids) {
+        return IteratorUtils.toList(findAll(ids).iterator());
+    }
+
     default List<T> saves(List<T> objs) {
         return IteratorUtils.toList(save(objs).iterator());
     }
