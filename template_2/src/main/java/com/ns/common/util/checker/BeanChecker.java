@@ -7,6 +7,7 @@ import com.ns.common.util.exception.sys.ParameterException;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -27,8 +28,8 @@ public abstract class BeanChecker {
         }
     }
 
-    public static void assertNotEmpty(List list, String errMsg) throws Throwable {
-        if (CollectionUtils.isEmpty(list)) {
+    public static void assertNotEmpty(Collection collection, String errMsg) throws Throwable {
+        if (CollectionUtils.isEmpty(collection)) {
             throw new ParameterException(errMsg);
         }
     }
@@ -42,6 +43,42 @@ public abstract class BeanChecker {
     public static void assertPositive(Integer o, String errMsg) throws Throwable {
         if (o == null || o <= 0) {
             throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertLongPositive(List<Long> objs, String errMsg) throws Throwable {
+        for (Long o: objs) {
+            assertPositive(o, errMsg);
+        }
+    }
+
+    public static void assertIntegerPositive(List<Integer> objs, String errMsg) throws Throwable {
+        for (Integer o: objs) {
+            assertPositive(o, errMsg);
+        }
+    }
+
+    public static void assertNotNegative(Long o, String errMsg) throws Throwable {
+        if (o == null || o < 0) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertNotNegative(Integer o, String errMsg) throws Throwable {
+        if (o == null || o < 0) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertNotNegativeLong(List<Long> objs, String errMsg) throws Throwable {
+        for (Long o: objs) {
+            assertNotNegative(o, errMsg);
+        }
+    }
+
+    public static void assertNotNegativeInteger(List<Integer> objs, String errMsg) throws Throwable {
+        for (Integer o: objs) {
+            assertNotNegative(o, errMsg);
         }
     }
 
