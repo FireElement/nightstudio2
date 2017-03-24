@@ -33,6 +33,18 @@ public abstract class BeanChecker {
         }
     }
 
+    public static void assertPositive(Long o, String errMsg) throws Throwable {
+        if (o == null || o <= 0) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
+    public static void assertPositive(Integer o, String errMsg) throws Throwable {
+        if (o == null || o <= 0) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
     public static void assertPattern(String str, String pattern, String errMsg) throws Throwable {
         if (StringUtils.isEmpty(str)
                 || StringUtils.isEmpty(pattern)
