@@ -46,6 +46,12 @@ public abstract class BeanChecker {
         }
     }
 
+    public static void assertPositive(Float o, String errMsg) throws Throwable {
+        if (o == null || o <= 0) {
+            throw new ParameterException(errMsg);
+        }
+    }
+
     public static void assertLongPositive(List<Long> objs, String errMsg) throws Throwable {
         for (Long o: objs) {
             assertPositive(o, errMsg);
