@@ -4,9 +4,8 @@ package com.ns.common.util.exception.sys;
 import com.ns.common.util.exception.errorcode.ErrorCode;
 
 public class NSException extends Exception {
-	private static final long serialVersionUID = -8929714273087267405L;
 	private ErrorCode errorCode;
-	private String code;
+	private Integer code;
 	private String msg;
 	private Object[] args;
 
@@ -26,15 +25,8 @@ public class NSException extends Exception {
 		super();
 		this.errorCode = errorCode;
 		if (errorCode != null) {
-			String value = errorCode.getValue();
-			int index;
-			if ((index = value.indexOf(':')) != -1) {
-				code = value.substring(0, index);
-				msg = value.substring(index + 1);
-			} else {
-				code = value;
-				msg = value;
-			}
+			this.code = errorCode.getCode();
+			this.msg = errorCode.getMsg();
 		}
 		if (args == null) {
 			this.args = new Object[0];
@@ -43,7 +35,7 @@ public class NSException extends Exception {
 		}
 	}
 
-	public String getCode() {
+	public Integer getCode() {
 		return this.code;
 	}
 

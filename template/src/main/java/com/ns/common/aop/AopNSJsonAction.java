@@ -37,7 +37,7 @@ public class AopNSJsonAction {
 
     private Object handle(ProceedingJoinPoint joinPoint) {
         Map<String, Object> result = new HashMap<String, Object>(2);
-        String error = "0";
+        int error = 0;
         String msg;
         Object data;
         try {
